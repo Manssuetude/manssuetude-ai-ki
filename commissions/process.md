@@ -6,7 +6,7 @@
 - Projet : 1555AHJAG7yABikES2HUrxOiPg_wOZ89M
 - Formations : 1u1a10wFoO8NOIM_t0XJNfEmz36uzpZQA
 - Documentation : 1a_Q_US3EyvWNTeQyGgzDh9dPW64uQiHy
-- Templates de l'association : Documentation > Templates (1jHBCOiw8ZdgVAyolMgTapKbp9UbMUdYU)
+- Templates de l'association : Templates, à la racine de C-Process (1jHBCOiw8ZdgVAyolMgTapKbp9UbMUdYU)
 
 ## Rôle de la commission
 

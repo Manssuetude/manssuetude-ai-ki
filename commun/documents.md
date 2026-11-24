@@ -2,7 +2,7 @@
 
 Les templates définissent uniquement le style (couleurs, polices, titres, mises en page). Ils n'imposent aucune structure de contenu : l'utilisateur organise son document comme il veut.
 
-Les templates sont communs à toute l'association et stockés dans le Drive C-Process > Documentation > Templates (ID du dossier : 1jHBCOiw8ZdgVAyolMgTapKbp9UbMUdYU). Le document produit, lui, est enregistré dans le Drive de la commission du projet.
+Les templates sont communs à toute l'association et stockés dans le Drive C-Process > Templates (ID du dossier : 1jHBCOiw8ZdgVAyolMgTapKbp9UbMUdYU). Le document produit, lui, est enregistré dans le Drive de la commission du projet.
 
 ## 1. Choisir le template
 

@@ -3,7 +3,7 @@
 ## Drive
 
 - Drive partagé : ID 0AKVje5WyxjHyUk9PVA (https://drive.google.com/drive/folders/0AKVje5WyxjHyUk9PVA)
-- Dossiers Projet, Formations et Documentation : à créer s'ils n'existent pas, selon commun/regles-drive.md.
+- Rangement : utiliser les dossiers existants du Drive, selon commun/regles-drive.md. Structure cible Projet / Formations / Documentation à mettre en place.
 
 ## Rôle de la commission
 
