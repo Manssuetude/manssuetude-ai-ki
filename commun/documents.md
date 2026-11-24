@@ -1,14 +1,10 @@
-# Prompt maître : génération de documents Manssuétude
+# Génération de documents
 
-Ce fichier est lu automatiquement par les projets Claude et ChatGPT de Manssuétude au début de chaque conversation. Il s'applique pendant toute la conversation.
+Les templates définissent uniquement le style (couleurs, polices, titres, mises en page). Ils n'imposent aucune structure de contenu : l'utilisateur organise son document comme il veut.
 
-Les templates définissent uniquement le style (couleurs, polices, titres, mises en page). Ils n'imposent aucune structure de contenu : l'utilisateur reste libre d'organiser son document comme il veut.
+Les templates sont communs à toute l'association et stockés dans le Drive C-Process > Documentation > Templates (ID du dossier : 1jHBCOiw8ZdgVAyolMgTapKbp9UbMUdYU). Le document produit, lui, est enregistré dans le Drive de la commission du projet.
 
-## Instructions pour le LLM
-
-Quand on te demande de produire un document Manssuétude (Word, Google Doc, PDF, PowerPoint, Google Slides), applique toujours la charte ci-dessous en partant du template correspondant, stocké dans C-Process > Documentation > Templates (ID du dossier : 1jHBCOiw8ZdgVAyolMgTapKbp9UbMUdYU).
-
-### 1. Choisir le template
+## 1. Choisir le template
 
 | Format demandé | Template à utiliser | ID Drive |
 |---|---|---|
@@ -20,15 +16,15 @@ Quand on te demande de produire un document Manssuétude (Word, Google Doc, PDF,
 
 Si un ID ne fonctionne plus, cherche le fichier par son titre dans le dossier Templates.
 
-### 2. Utiliser le template
+## 2. Utiliser le template
 
-Google Doc ou Google Slides : copie le template (ne modifie jamais l'original) dans le bon dossier projet, renomme la copie, supprime le contenu d'exemple, puis écris le contenu en utilisant les styles déjà définis.
+Google Doc ou Google Slides : copie le template (ne modifie jamais l'original) dans le bon dossier du Drive de la commission, renomme la copie, supprime le contenu d'exemple, puis écris le contenu en utilisant les styles déjà définis.
 
 Word ou PowerPoint : télécharge le fichier template et construis le document à partir de lui, en réutilisant ses styles (Word) ou ses mises en page (PowerPoint). Ne recrée pas les styles à la main.
 
-Si tu ne peux pas modifier le fichier copié avec tes outils, génère le document en code en reprenant exactement les valeurs de la charte ci-dessous, puis dépose-le dans le bon dossier.
+Si tu ne peux pas modifier le fichier copié avec tes outils, génère le document en code en reprenant exactement les valeurs de charte.md et des styles ci-dessous, puis dépose-le dans le bon dossier.
 
-### 3. Styles Word et Google Doc
+## 3. Styles Word et Google Doc
 
 | Style | Police | Taille | Couleur | Détail |
 |---|---|---|---|---|
@@ -45,7 +41,7 @@ Si tu ne peux pas modifier le fichier copié avec tes outils, génère le docume
 
 Listes : puces et numéros en orange. Tableaux : en-tête orange #F67D24 avec texte blanc, bordures fines beige #E5D3C4. En-tête de page : logo à gauche avec filet orange. Pied de page : « Manssuétude » à gauche, numéro de page en orange à droite.
 
-### 4. Mises en page PowerPoint et Google Slides
+## 4. Mises en page PowerPoint et Google Slides
 
 | Mise en page | Usage |
 |---|---|
@@ -60,18 +56,3 @@ Listes : puces et numéros en orange. Tableaux : en-tête orange #F67D24 avec te
 
 Varie les mises en page. Chaque slide doit avoir un élément visuel (chiffre, schéma, icône, image). Titres en Montserrat gras, texte en Open Sans, 14 pt minimum.
 
-### 5. Charte couleurs
-
-- Obligatoire : l'orange du logo #F67D24 est la couleur dominante de chaque document.
-- Libre selon le document : orange foncé #D66B1E (texte orange sur fond blanc), orange clair #FDF3EC (fonds d'encadrés), navy #2D3E50, gris #5A5A5A, crème #FFF8F2.
-- Aucune autre couleur dominante. Pas de dégradé.
-
-### 6. Règles communes
-
-- Logo : toujours la version sur fond transparent, celle des templates. Version blanche sur fond orange ou navy.
-- N'utilise jamais le tiret cadratin (—) dans les documents.
-- Ton clair et direct, pas de formulations gonflées.
-- Nommage : « Type - Titre ». Types : Cadrage, CDC, Proposition, CR, Guide, Présentation, Notes, Liens.
-- Rangement : un projet = un sous-dossier de C-Process > Projet ; une formation = un sous-dossier de Formations ; un guide valable pour toute la commission va dans Documentation. Rien à la racine du Drive.
-- Pour une mise à jour, modifie le document existant au lieu de créer un doublon.
-- Après chaque enregistrement, donne le lien du document.

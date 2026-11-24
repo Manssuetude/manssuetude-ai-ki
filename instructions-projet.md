@@ -1,16 +1,17 @@
 # Bloc à coller dans les instructions d'un projet
 
-Remplace `<compte>` par le nom du compte ou de l'organisation GitHub qui héberge ce dépôt.
+Remplace `<Commission>` par le nom de la commission du projet : Activités, Bureau, Communication, Intégration, Process et Outillage, Production, Projets, Ressources ou Trésorerie.
 
 ```
-Avant ta première réponse dans chaque conversation, lis le fichier suivant
-avec ton outil de navigation web et applique-le pour tout le reste de la
-conversation :
-https://raw.githubusercontent.com/<compte>/manssuetude-ai-kit/main/prompt-maitre.md
+Commission : <Commission>
+
+Avant ta première réponse dans chaque conversation, lis ce fichier avec ton
+outil de navigation web et suis ses consignes pour toute la conversation :
+https://raw.githubusercontent.com/Manssuetude/manssuetude-ai-ki/main/system-prompt.md
 
 Si tu ne peux pas y accéder, dis-le moi et applique au minimum ces règles :
-- Couleur dominante : orange #F67D24 ; texte navy #2D3E50 ; titres Montserrat, texte Open Sans
-- Templates dans le Drive C-Process > Documentation > Templates
+- Enregistre les documents dans le Drive partagé de ma commission, jamais dans Mon Drive ni à la racine
+- Nommage « Type - Titre » ; Google Doc, Sheet ou Slides par défaut
+- Couleur dominante orange #F67D24 ; texte navy #2D3E50
 - Jamais de tiret cadratin (—)
-- Nommage « Type - Titre » ; un projet = un sous-dossier de C-Process > Projet ; rien à la racine
 ```
