@@ -2,7 +2,7 @@
 """Monitoring du dépôt manssuetude-ai-ki.
 
 Vérifie :
-1. Les liens vers ce dépôt (raw.githubusercontent.com) pointent vers des fichiers qui existent.
+1. Les liens vers ce dépôt (jsDelivr ou raw.githubusercontent.com) pointent vers des fichiers qui existent.
 2. Le point d'entrée system-prompt.md est bien lisible en ligne (dépôt public, branche main).
 3. Chaque commission listée dans system-prompt.md a son fichier dans commissions/.
 4. Les templates du Drive (commun/documents.md) sont accessibles par lien, sans connexion.
@@ -20,7 +20,9 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-REPO_RAW = "https://raw.githubusercontent.com/Manssuetude/manssuetude-ai-ki/main/"
+REPO_RAW = "https://cdn.jsdelivr.net/gh/Manssuetude/manssuetude-ai-ki@main/"
+REPO_RAW_GH = "https://raw.githubusercontent.com/Manssuetude/manssuetude-ai-ki/main/"
+PURGE = "https://purge.jsdelivr.net/gh/Manssuetude/manssuetude-ai-ki@main/"
 ENTRY_URL = REPO_RAW + "system-prompt.md"
 UA = {"User-Agent": "Mozilla/5.0 (manssuetude-ai-ki monitoring)"}
 
@@ -57,20 +59,23 @@ def check_repo_links():
         text = f.read_text(encoding="utf-8")
         for m in URL_RE.finditer(text):
             url = m.group(0).rstrip(".,;:")
-            if not url.startswith(REPO_RAW):
+            prefix = next((p for p in (REPO_RAW, REPO_RAW_GH) if url.startswith(p)), None)
+            if not prefix:
                 continue
             if text[m.end():m.end() + 1] == "<":  # modèle du type commissions/<fichier>.md
                 continue
-            target = ROOT / url[len(REPO_RAW):]
+            target = ROOT / url[len(prefix):]
             if target.is_file():
-                ok.append(f"Lien interne OK : {url[len(REPO_RAW):]} (dans {rel(f)})")
+                ok.append(f"Lien interne OK : {url[len(prefix):]} (dans {rel(f)})")
             else:
                 errors.append(f"Lien interne cassé dans {rel(f)} : {url}")
 
 
 def check_entry_online():
     code, final = fetch(ENTRY_URL)
-    if code == 200:
+    if code == 0:
+        warnings.append("jsDelivr injoignable depuis cette machine, lecture en ligne non vérifiée")
+    elif code == 200:
         ok.append("system-prompt.md lisible en ligne")
     else:
         errors.append(f"system-prompt.md illisible en ligne (HTTP {code}) : dépôt privé, renommé ou branche changée ?")
@@ -116,7 +121,7 @@ def check_external_links():
     for f in md_files():
         for url in URL_RE.findall(f.read_text(encoding="utf-8")):
             url = url.rstrip(".,;:")
-            if url.startswith(REPO_RAW) or "drive.google.com" in url or "docs.google.com" in url or url in seen:
+            if url.startswith((REPO_RAW, REPO_RAW_GH)) or "drive.google.com" in url or "docs.google.com" in url or url in seen:
                 continue
             seen.add(url)
             code, _ = fetch(url)
@@ -135,7 +140,20 @@ def check_em_dash():
                 errors.append(f"Tiret cadratin dans {rel(f)}, ligne {i}")
 
 
+def purge_cdn():
+    """Sur GitHub Actions, vide le cache jsDelivr pour que les modifications soient en ligne tout de suite."""
+    if not os.environ.get("GITHUB_ACTIONS"):
+        return
+    for f in md_files():
+        code, _ = fetch(PURGE + rel(f))
+        if code == 200:
+            ok.append(f"Cache jsDelivr vidé : {rel(f)}")
+        else:
+            warnings.append(f"Cache jsDelivr non vidé (HTTP {code}) : {rel(f)}")
+
+
 def main():
+    purge_cdn()
     for check in (check_repo_links, check_entry_online, check_commission_files,
                   check_drive_templates, check_external_links, check_em_dash):
         check()

@@ -8,12 +8,12 @@ Ce fichier est le point d'entrée de tous les projets Claude et ChatGPT de l'ass
 
 1. Repère la commission indiquée dans les instructions du projet (ligne « Commission : ... »). Si aucune commission n'est indiquée, demande-la à l'utilisateur avant de produire quoi que ce soit.
 2. Lis les quatre fichiers communs ci-dessous avec ton outil de navigation web :
-   - https://raw.githubusercontent.com/Manssuetude/manssuetude-ai-ki/main/commun/association.md
-   - https://raw.githubusercontent.com/Manssuetude/manssuetude-ai-ki/main/commun/regles-drive.md
-   - https://raw.githubusercontent.com/Manssuetude/manssuetude-ai-ki/main/commun/charte.md
-   - https://raw.githubusercontent.com/Manssuetude/manssuetude-ai-ki/main/commun/documents.md
+   - https://cdn.jsdelivr.net/gh/Manssuetude/manssuetude-ai-ki@main/commun/association.md
+   - https://cdn.jsdelivr.net/gh/Manssuetude/manssuetude-ai-ki@main/commun/regles-drive.md
+   - https://cdn.jsdelivr.net/gh/Manssuetude/manssuetude-ai-ki@main/commun/charte.md
+   - https://cdn.jsdelivr.net/gh/Manssuetude/manssuetude-ai-ki@main/commun/documents.md
 3. Lis le fichier de la commission du projet :
-   https://raw.githubusercontent.com/Manssuetude/manssuetude-ai-ki/main/commissions/<fichier>.md
+   https://cdn.jsdelivr.net/gh/Manssuetude/manssuetude-ai-ki@main/commissions/<fichier>.md
 
 | Commission | Fichier |
 |---|---|
