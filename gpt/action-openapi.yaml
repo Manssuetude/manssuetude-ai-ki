@@ -1,0 +1,66 @@
+openapi: 3.1.0
+info:
+  title: Configuration Manssuétude
+  description: Lit les fichiers publics du dépôt GitHub manssuetude-ai-ki (prompt système, règles communes, fichiers de commission).
+  version: 1.0.0
+servers:
+  - url: https://raw.githubusercontent.com
+paths:
+  /Manssuetude/manssuetude-ai-ki/main/system-prompt.md:
+    get:
+      operationId: getSystemPrompt
+      summary: Lit le prompt système Manssuétude (point d'entrée, avec le code de contrôle).
+      responses:
+        "200":
+          description: Contenu Markdown du prompt système.
+          content:
+            text/plain:
+              schema:
+                type: string
+  /Manssuetude/manssuetude-ai-ki/main/commun/{fichier}:
+    get:
+      operationId: getFichierCommun
+      summary: Lit un fichier de règles communes à toute l'association.
+      parameters:
+        - name: fichier
+          in: path
+          required: true
+          description: Nom du fichier commun.
+          schema:
+            type: string
+            enum: [association.md, regles-drive.md, charte.md, documents.md]
+      responses:
+        "200":
+          description: Contenu Markdown du fichier.
+          content:
+            text/plain:
+              schema:
+                type: string
+  /Manssuetude/manssuetude-ai-ki/main/commissions/{fichier}:
+    get:
+      operationId: getFichierCommission
+      summary: Lit le fichier d'une commission (Drive, rôle, règles propres).
+      parameters:
+        - name: fichier
+          in: path
+          required: true
+          description: Nom du fichier de la commission.
+          schema:
+            type: string
+            enum:
+              - activites.md
+              - bureau.md
+              - communication.md
+              - integration.md
+              - process.md
+              - production.md
+              - projets.md
+              - ressources.md
+              - tresorerie.md
+      responses:
+        "200":
+          description: Contenu Markdown du fichier.
+          content:
+            text/plain:
+              schema:
+                type: string

@@ -1,30 +1,35 @@
 # manssuetude-ai-ki
 
-Kit IA de Manssuétude : prompt système commun lu par tous les projets Claude et ChatGPT de l'association.
+Kit IA de Manssuétude : prompt système commun à tous les assistants IA de l'association, pour tous les membres et toutes les commissions.
 
 ## Principe
 
-Les instructions de chaque projet ne contiennent que trois lignes : la commission et le lien vers `system-prompt.md`. Au début de chaque conversation, le LLM lit ce dépôt et se configure tout seul : contexte de l'association, ton, règles Drive, nommage, charte et règles propres à la commission.
+Le dépôt contient toutes les consignes : contexte de l'association, ton, règles Drive, nommage, charte, et règles propres à chaque commission. Les assistants les lisent au début de chaque conversation. Une modification ici s'applique à tous les membres dès la conversation suivante.
 
-Une modification sur ce dépôt s'applique à tous les projets de tous les membres dès la conversation suivante.
+Un membre peut faire partie de plusieurs commissions : l'assistant charge les fichiers de chacune et range chaque document dans le Drive de la commission concernée.
+
+## Deux façons de l'utiliser
+
+| Outil | Mise en place | Fichier |
+|---|---|---|
+| **Claude** (projet) | Chaque membre colle un bloc dans les instructions de son projet | `instructions-projet.md` |
+| **ChatGPT** | Un GPT personnalisé commun, partagé par lien (les projets ChatGPT n'arrivent pas à lire le dépôt) | `gpt/README.md` |
+
+Vérification : la première réponse de l'assistant commence par « Configuration Manssuétude chargée (MNS-CFG-...) ». Sinon, la configuration n'est pas chargée.
 
 ## Contenu
 
 | Fichier | Rôle |
 |---|---|
-| `system-prompt.md` | Point d'entrée : dit au LLM quels fichiers lire |
+| `system-prompt.md` | Point d'entrée : code de contrôle, fichiers à lire, gestion multi-commissions |
 | `commun/association.md` | Présentation, commissions, adresses, ton |
 | `commun/regles-drive.md` | Rangement, formats, nommage, versions |
 | `commun/charte.md` | Couleurs, polices, logo |
 | `commun/documents.md` | Templates Drive et styles |
 | `commissions/*.md` | Drive et règles propres à chaque commission |
-| `instructions-projet.md` | Le bloc à coller dans chaque projet |
-
-## Mettre en place un projet
-
-1. Colle le bloc de `instructions-projet.md` dans les instructions du projet, avec le nom de ta commission.
-2. Active la recherche web dans le projet, sinon le LLM ne peut pas lire ce dépôt.
-3. Connecte Google Drive pour qu'il puisse enregistrer et copier les templates.
+| `instructions-projet.md` | Bloc à coller dans un projet Claude |
+| `gpt/` | Instructions, Action et politique de confidentialité du GPT personnalisé |
+| `scripts/check_links.py` | Monitoring des liens (lancé par GitHub Actions) |
 
 ## Compléter le fichier de sa commission
 
@@ -33,4 +38,5 @@ Chaque responsable de commission complète `commissions/<commission>.md` (rôle,
 ## Règles du dépôt
 
 - Seule la commission Process et Outillage a les droits d'écriture.
+- Après une modification importante, change le code de contrôle dans `system-prompt.md` (MNS-CFG-2611, puis 2612...).
 - Dépôt public : aucun nom de membre, email personnel ni information interne sensible.

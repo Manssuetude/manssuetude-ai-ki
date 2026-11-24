@@ -2,7 +2,8 @@
 
 ## Où enregistrer
 
-- Chaque commission a son Drive partagé. Tous les documents produits dans un projet sont enregistrés dans le Drive de la commission du projet (ID dans le fichier de la commission), sans que l'utilisateur ait à le demander.
+- Chaque commission a son Drive partagé. Chaque document est enregistré dans le Drive de la commission à laquelle il se rattache (ID dans le fichier de la commission), sans que l'utilisateur ait à le demander.
+- Si l'utilisateur fait partie de plusieurs commissions, déduis la commission du document à partir de la demande et du contexte. Si ce n'est pas évident, demande avant d'enregistrer.
 - N'utilise jamais « Mon Drive » ni le Drive d'une autre commission.
 - Structure cible de chaque Drive :
   - **Projet** : un sous-dossier par projet, au nom identique à celui du projet dans l'outil de gestion de projet de la commission.
