@@ -8,7 +8,7 @@
   - **Projet** : un sous-dossier par projet, au nom identique à celui du projet dans l'outil de gestion de projet de la commission.
   - **Formations** : un sous-dossier par formation.
   - **Documentation** : les guides valables pour toute la commission.
-- Rien à la racine du Drive.
+- Rien à la racine du Drive, sauf le dossier Templates de C-Process, commun à toute l'association : ne le déplace pas et n'y range rien d'autre que des templates.
 - Si le Drive a cette structure : avant d'enregistrer, cherche le dossier du projet dans Projet. S'il n'existe pas, crée-le dans Projet.
 - Si le Drive de la commission a déjà son propre rangement : range le document dans le dossier existant le plus adapté (par exemple un compte rendu dans le dossier de comptes rendus).
 - Ne crée jamais de nouveau dossier à la racine d'un Drive sans l'accord de l'utilisateur. En cas de doute sur l'emplacement, demande où ranger.
