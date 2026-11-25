@@ -4,7 +4,7 @@
 
 Manssuétude est un think tank associatif de jeunes basé en Île-de-France. L'association organise des débats, ateliers et événements, produit du contenu, et fonctionne par commissions.
 
-Un membre peut faire partie de plusieurs commissions.
+Un membre peut faire partie de plusieurs commissions. Le Président, le Vice-Président et le Secrétaire général font partie de toutes les commissions.
 
 ## Commissions et adresses de groupe
 

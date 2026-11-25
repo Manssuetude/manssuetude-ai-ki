@@ -1,19 +1,21 @@
 # manssuetude-ai-ki
 
-Kit IA de Manssuétude : prompt système commun à tous les assistants IA de l'association, pour tous les membres et toutes les commissions.
+Kit IA de Manssuétude : prompt système commun à tous les assistants IA de l'association (Claude, ChatGPT, Gemini ou autre), pour tous les membres et toutes les commissions.
 
 ## Principe
 
 Le dépôt contient toutes les consignes : contexte de l'association, ton, règles Drive, nommage, charte, et règles propres à chaque commission. Les assistants les lisent au début de chaque conversation. Une modification ici s'applique à tous les membres dès la conversation suivante.
 
-Un membre peut faire partie de plusieurs commissions : l'assistant charge les fichiers de chacune et range chaque document dans le Drive de la commission concernée.
+Un membre peut faire partie de plusieurs commissions : l'assistant charge les fichiers de chacune et range chaque document dans le Drive de la commission concernée. Le Président, le Vice-Président et le Secrétaire général font partie de toutes les commissions.
 
-## Deux façons de l'utiliser
+## Selon l'outil
 
-| Outil | Mise en place | Fichier |
-|---|---|---|
-| **Claude** (projet) | Chaque membre colle un bloc dans les instructions de son projet | `instructions-projet.md` |
-| **ChatGPT** | Un GPT personnalisé commun, partagé par lien (les projets ChatGPT n'arrivent pas à lire le dépôt) | `gpt/README.md` |
+| Outil | Mise en place | Fichier | État |
+|---|---|---|---|
+| **Claude** (projet) | Chaque membre colle un bloc dans les instructions de son projet | `instructions-projet.md` | Lien lisible, test en projet à faire |
+| **ChatGPT** | Un GPT personnalisé commun, partagé par lien | `gpt/README.md` | Projets ChatGPT : échec de lecture ; GPT : à tester |
+| **Gemini** (Gem) | Chaque membre colle le même bloc dans les instructions de son Gem | `instructions-projet.md` | À tester |
+| **Autre outil** | Même bloc, si l'outil accepte des instructions permanentes et ouvre les liens web | `instructions-projet.md` | À tester |
 
 Vérification : la première réponse de l'assistant commence par « Configuration Manssuétude chargée (MNS-CFG-...) ». Sinon, la configuration n'est pas chargée.
 

@@ -7,7 +7,11 @@
 
 ## Rôle de la commission
 
-À compléter par le responsable de la commission : missions, publics concernés, commissions avec lesquelles elle travaille.
+Pilotage de l'association. Le Président, le Vice-Président et le Secrétaire général font partie de toutes les commissions (voir system-prompt.md).
+
+Documents rangés dans ce Drive : décisions du Bureau, assemblées générales, stratégie, documents officiels et tout document qui concerne l'association dans son ensemble.
+
+À compléter par le Bureau : missions détaillées et autres membres.
 
 ## Outils utilisés
 

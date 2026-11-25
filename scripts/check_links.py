@@ -20,9 +20,8 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-REPO_RAW = "https://cdn.jsdelivr.net/gh/Manssuetude/manssuetude-ai-ki@main/"
-REPO_RAW_GH = "https://raw.githubusercontent.com/Manssuetude/manssuetude-ai-ki/main/"
-PURGE = "https://purge.jsdelivr.net/gh/Manssuetude/manssuetude-ai-ki@main/"
+REPO_RAW = "https://raw.githubusercontent.com/Manssuetude/manssuetude-ai-ki/main/"
+REPO_RAW_GH = "https://cdn.jsdelivr.net/gh/Manssuetude/manssuetude-ai-ki@main/"  # ancien format, toujours reconnu
 ENTRY_URL = REPO_RAW + "system-prompt.md"
 UA = {"User-Agent": "Mozilla/5.0 (manssuetude-ai-ki monitoring)"}
 
@@ -74,7 +73,7 @@ def check_repo_links():
 def check_entry_online():
     code, final = fetch(ENTRY_URL)
     if code == 0:
-        warnings.append("jsDelivr injoignable depuis cette machine, lecture en ligne non vérifiée")
+        warnings.append("GitHub injoignable depuis cette machine, lecture en ligne non vérifiée")
     elif code == 200:
         ok.append("system-prompt.md lisible en ligne")
     else:
@@ -140,20 +139,7 @@ def check_em_dash():
                 errors.append(f"Tiret cadratin dans {rel(f)}, ligne {i}")
 
 
-def purge_cdn():
-    """Sur GitHub Actions, vide le cache jsDelivr pour que les modifications soient en ligne tout de suite."""
-    if not os.environ.get("GITHUB_ACTIONS"):
-        return
-    for f in md_files():
-        code, _ = fetch(PURGE + rel(f))
-        if code == 200:
-            ok.append(f"Cache jsDelivr vidé : {rel(f)}")
-        else:
-            warnings.append(f"Cache jsDelivr non vidé (HTTP {code}) : {rel(f)}")
-
-
 def main():
-    purge_cdn()
     for check in (check_repo_links, check_entry_online, check_commission_files,
                   check_drive_templates, check_external_links, check_em_dash):
         check()
